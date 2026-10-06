@@ -1,10 +1,10 @@
 
 public class BankAccount {
 
-	public double balance;
-	public double negativeBalance;
+	public double balance = 0;
+	public double negativeBalance = 0;
 
-	public BankAccount(double balance){
+	public BankAccount(double balance) {
 
 		this.balance = balance;
 	}
@@ -13,7 +13,7 @@ public class BankAccount {
 
 		// check if withdraw amount is more than balance 
 		if (amount > balance) {
-			double overdue = balance - amount;
+			double overdue = amount - balance;
 			throw new NegativeBalanceException(overdue);
 		}
 		
